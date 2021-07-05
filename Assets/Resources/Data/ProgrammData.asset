@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8202ee10c291d4e4c8d5505e71a2dd9a, type: 3}
+  m_Name: ProgrammData
+  m_EditorClassIdentifier: 
+  _activeScreenSize: {x: 18, y: 8}
+  _negativeWegithLine: {fileID: 2100000, guid: 0754aa8c9552ea64fb4e717137f2149d, type: 2}
+  _positiveWeightLine: {fileID: 2100000, guid: 86f92ee5d3f6d8947bbeb20b70e7fd90, type: 2}
+  _zeroWeightLine: {fileID: 2100000, guid: 5a2fdb4fdabd6a04b9a7804fa971de36, type: 2}
+  _chosenPathLine: {fileID: 2100000, guid: 44305f067ebb26a4bacb942fd72c44ea, type: 2}
+  _nodePrefab: {fileID: 4733360201377987459, guid: ff8fc797e6cd73b4b9b2dccf1c686e53, type: 3}
+  _edgePrefab: {fileID: 4733360201377987459, guid: 973de8b4a5d4ce140bc7afd705b40f5f, type: 3}
+  _mainCameraTag: MainCamera
+  _cameraRaycastLength: 100
