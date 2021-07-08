@@ -57,7 +57,6 @@ namespace TestAlgorithm
             }
         }
 
-
         #endregion
 
 

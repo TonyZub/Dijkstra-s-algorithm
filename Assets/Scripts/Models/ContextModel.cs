@@ -11,6 +11,7 @@ namespace TestAlgorithm
 
         [SerializeField] private List<NodeData> _nodeDatas;
         [SerializeField] private List<EdgeData> _edgeDatas;
+
         private InitializeController _initializeController;
         private GraphController _graphController;
         private bool _isInteractive;
