@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: ProgrammData
   m_EditorClassIdentifier: 
   _activeScreenSize: {x: 18, y: 8}
-  _negativeWegithLine: {fileID: 2100000, guid: 0754aa8c9552ea64fb4e717137f2149d, type: 2}
-  _positiveWeightLine: {fileID: 2100000, guid: 86f92ee5d3f6d8947bbeb20b70e7fd90, type: 2}
+  _positiveWegithLine: {fileID: 2100000, guid: 86f92ee5d3f6d8947bbeb20b70e7fd90, type: 2}
   _zeroWeightLine: {fileID: 2100000, guid: 5a2fdb4fdabd6a04b9a7804fa971de36, type: 2}
   _chosenPathLine: {fileID: 2100000, guid: 44305f067ebb26a4bacb942fd72c44ea, type: 2}
   _nodePrefab: {fileID: 4733360201377987459, guid: ff8fc797e6cd73b4b9b2dccf1c686e53, type: 3}
   _edgePrefab: {fileID: 4733360201377987459, guid: 973de8b4a5d4ce140bc7afd705b40f5f, type: 3}
+  _nodePanelPrefab: {fileID: 3089699713201056113, guid: 6bc5d78f6e241274fbfd9dc1b7b22e66, type: 3}
+  _edgePanelPrefab: {fileID: 3089699713201056113, guid: b22d5da791f929a4fb7498cd1267d0b0, type: 3}
+  _mainPanelPrefab: {fileID: 3089699713201056113, guid: d0e83f482e3a98b439b5af39652243c5, type: 3}
   _mainCameraTag: MainCamera
+  _nodePanelTitle: Node selected
+  _nodePanelPathFindingTitle: Select path end node
+  _nodePanelEdgeCreatingTitle: Choose node to connect
+  _edgePanelTitle: Edge selected
   _cameraRaycastLength: 100
+  _maximalEdgeWeight: 100
+  _saveProgressAfterPlayMode: 1

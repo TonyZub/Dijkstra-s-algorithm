@@ -13,10 +13,49 @@ MonoBehaviour:
   m_Name: GraphData
   m_EditorClassIdentifier: 
   _nodeDatas:
-  - _position: {x: 1, y: 1}
-  - _position: {x: -1, y: 2}
+  - _position: {x: -4.7978764, y: 0.6487024}
+  - _position: {x: -0.07988137, y: 3.6427145}
+  - _position: {x: 4.288632, y: 0.84830344}
+  - _position: {x: -2.501286, y: -3.243513}
+  - _position: {x: 3.2152262, y: -3.143713}
   _edgeDatas:
-  - _position: {x: 0, y: 1.5}
+  - _position: {x: 3.689522, y: -1.297405}
+    _nodeStartIndex: 2
+    _nodeEndIndex: 4
+    _weight: 2
+  - _position: {x: 0.21967408, y: -3.243513}
+    _nodeStartIndex: 3
+    _nodeEndIndex: 4
+    _weight: 3
+  - _position: {x: -3.5746922, y: -1.4970062}
+    _nodeStartIndex: 0
+    _nodeEndIndex: 3
+    _weight: 1
+  - _position: {x: -2.6011379, y: 2.1457088}
     _nodeStartIndex: 0
     _nodeEndIndex: 1
+    _weight: 3
+  - _position: {x: 1.9920421, y: 2.2954094}
+    _nodeStartIndex: 1
+    _nodeEndIndex: 2
+    _weight: 2
+  - _position: {x: 0.89367294, y: -1.1976049}
+    _nodeStartIndex: 2
+    _nodeEndIndex: 3
+    _weight: 6
+  - _position: {x: -0.7913251, y: -1.2475053}
+    _nodeStartIndex: 0
+    _nodeEndIndex: 4
     _weight: 5
+  - _position: {x: -1.2905837, y: 0.1996007}
+    _nodeStartIndex: 1
+    _nodeEndIndex: 3
+    _weight: 5
+  - _position: {x: -0.25462222, y: 0.7485029}
+    _nodeStartIndex: 0
+    _nodeEndIndex: 2
+    _weight: 7
+  - _position: {x: 1.5676724, y: 0.24950075}
+    _nodeStartIndex: 1
+    _nodeEndIndex: 4
+    _weight: 4

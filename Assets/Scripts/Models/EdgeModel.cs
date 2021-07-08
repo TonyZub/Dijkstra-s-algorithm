@@ -17,17 +17,20 @@ namespace TestAlgorithm
         #region Properties
 
         public int Weight { get; private set; }
+        public int StartNodeModelIndex => _startNodeModel.Index;
+        public int EndNodeModelIndex => _endNodeModel.Index;
 
         #endregion
 
 
         #region Constructor
 
-        public EdgeModel(GameObject objectOnScene, Vector2 startPosition, NodeModel startNodeModel, NodeModel endNodeModel, int weight) : 
-            base (objectOnScene, startPosition)
+        public EdgeModel(GameObject objectOnScene, Vector2 startPosition, NodeModel startNodeModel, 
+            NodeModel endNodeModel, int weight) : base (objectOnScene, startPosition)
         {
-            _startNodeModel = startNodeModel;
-            _endNodeModel = endNodeModel;
+            _objectType = SceneObjectTypes.GraphEdge;
+            _startNodeModel = startNodeModel.Index < endNodeModel.Index ? startNodeModel : endNodeModel;
+            _endNodeModel = startNodeModel.Index > endNodeModel.Index ? startNodeModel : endNodeModel;
             _lineRenderer = ObjectOnScene.GetComponentInChildren<LineRenderer>();   
             Weight = weight;
 
@@ -46,7 +49,7 @@ namespace TestAlgorithm
             TextComponent.text = Weight.ToString();
         }
 
-        private void SetLinePosition()
+        public void SetLinePosition()
         {
             Vector3[] linePointsPositions = new[] 
             {
@@ -59,13 +62,12 @@ namespace TestAlgorithm
 
         private void SetLineMaterial()
         {
-            _lineRenderer.material = Weight > 0 ? Data.ProgrammData.PositiveWeightLine : Weight < 0 ?
-                Data.ProgrammData.NegativeWeightLine : Data.ProgrammData.ZeroWeightLine;
+            _lineRenderer.material = Weight > 0 ? Data.ProgrammData.PositiveWeightLine : Data.ProgrammData.ZeroWeightLine;
         }
 
         public void ChangeWeight(int newWeight)
         {
-            Weight = newWeight;
+            Weight = Mathf.Clamp(newWeight, 0, Data.ProgrammData.MaximalEdgeWeight);
             SetTextWeight();
             SetLineMaterial();
         }
@@ -73,7 +75,17 @@ namespace TestAlgorithm
         public override void Move(Vector2 positionTo)
         {
             base.Move(positionTo);
-            ObjectTransform.position = positionTo;
+            SetLinePosition();
+        }
+
+        public void SelectForPath()
+        {
+            _lineRenderer.material = Data.ProgrammData.ChosenPathLine;
+        }
+
+        public void UnselectForPath()
+        {
+            SetLineMaterial();
         }
 
         #endregion

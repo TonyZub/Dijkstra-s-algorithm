@@ -7,8 +7,16 @@ namespace TestAlgorithm
 {
     public abstract class SceneObjectModel
     {
+        #region Fields
+
+        protected SceneObjectTypes _objectType;
+
+        #endregion
+
+
         #region Properties
 
+        public SceneObjectTypes ObjectType => _objectType;
         public GameObject ObjectOnScene { get; }
         public Transform ObjectTransform { get; }
         public TMP_Text TextComponent { get; }
@@ -22,6 +30,7 @@ namespace TestAlgorithm
 
         public SceneObjectModel(GameObject objectOnScene, Vector2 startPosition)
         {
+            _objectType = SceneObjectTypes.None;
             ObjectOnScene = objectOnScene;
             ObjectTransform = ObjectOnScene.transform;
             ObjectId = ObjectOnScene.GetComponentInChildren<Collider>().gameObject.GetInstanceID();
@@ -45,13 +54,23 @@ namespace TestAlgorithm
             SelectionImage.enabled = false;
         }
 
-        public virtual void Move(Vector2 movement)
+        public virtual void Move(Vector2 newPosition)
         {
-            float screenWidth = Data.ProgrammData.ActiveScreenSize.x;
-            float screenHeight = Data.ProgrammData.ActiveScreenSize.y;
-            float newPositionX = Mathf.Clamp(ObjectTransform.position.x + movement.x, -screenWidth / 2, screenWidth / 2);
-            float newPositionY = Mathf.Clamp(ObjectTransform.position.y + movement.y, -screenHeight / 2, screenHeight / 2);
+            float newPositionX = Mathf.Clamp(newPosition.x, Data.ProgrammData.ScreenEdgeLeft, 
+                Data.ProgrammData.ScreenEdgeRight);
+            float newPositionY = Mathf.Clamp(newPosition.y, Data.ProgrammData.ScreenEdgeDown, 
+                Data.ProgrammData.ScreenEdgeUp);
             ObjectTransform.position = new Vector3(newPositionX, newPositionY, 0);
+        }
+
+        public void UpdateName(int index)
+        {
+            ObjectOnScene.name = index.ToString();
+        }
+
+        public void DestroyObjectOnScene()
+        {
+            Object.Destroy(ObjectOnScene);
         }
 
         #endregion
