@@ -1,6 +1,6 @@
-# TestAlgorithm (Реализация интерактивного графа с поиском кратчайшего пути по алгоритму Дейкстра)
-- Данные вершин и ребер графа изначально хранятся в ScriptableObject файле - Resources/Data/GraphData;
-- При переходе в плеймод, инициализатор создает объекты из этих данных на сцене, а также сохраняет данные при выходе из плеймода (можно отключить в Resources/Data/ProgrammhData);
-- Редактирование графа возможно через управление мышью на сцене (можно тыкать на вершины и ребра чтобы их подвинуть и произвести другие действия);
-- Редактирование графа также возможно через инспектор (в режиме плеймода) из объекта MainControllers;
-- Для поиска кратчайшего пути на графе необходимо в плеймоде мышью выбрать стартовую вершину, затем в открывшейся панели нажать Find path и мышью выбрать конечную вершину;
+# Dijkstra's algorithm (Interactive graph)
+- Vertex and edges data is stored in ScriptableObject file - Resources/Data/GraphData;
+- When entering playmode, vertexes and edges are created on scene. And after exiting playmode the changes are saved (can turn that off in Resources/Data/ProgrammhData);
+- You can edit graph with mouse on scene (you can click on vertexes or edges to manipulate them);
+- It is also possible to edit data in inspector (in playmode) in MainControllers object;
+- To find the shortest path from one vertex to another - you need to click on some vertex then click on the button "Find path" and then click on another vertex;
